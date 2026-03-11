@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange-500: #FF4500; /* Electric Orange / Neon Red */
+  --color-orange-600: #E03E00;
+  --color-black: #0A0A0A;
+  --color-charcoal: #141414;
+  --color-charcoal-light: #1F1F1F;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-rose-500;
+  }
+  
+  .bg-gradient-subtle {
+    @apply bg-gradient-to-b from-charcoal to-black;
+  }
+  
+  .glass-card {
+    @apply bg-charcoal-light/50 backdrop-blur-md border border-white/5 rounded-2xl;
+  }
+}
